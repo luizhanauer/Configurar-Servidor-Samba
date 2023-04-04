@@ -32,6 +32,14 @@ sudo adduser --no-create-home --disabled-login smb-usuario
 
 Substitua ```smb-usuario``` pelo nome de usuário que deseja usar.
 
+Para permitir que o usuário Samba acesse a pasta compartilhada, defina uma senha para ele com o seguinte comando:
+
+```
+sudo -s smbpasswd -a smb-usuario
+```
+
+Substitua `smb-usuario` pelo nome de usuário que você criou anteriormente. Digite uma senha segura quando solicitado.
+
 Criando uma pasta compartilhada
 -------------------------------
 
@@ -84,17 +92,6 @@ Para que as alterações entrem em vigor, reinicie o serviço Samba com o seguin
 ```
 sudo systemctl restart smbd.service
 ```
-
-Definindo uma senha para o usuário Samba
-----------------------------------------
-
-Para permitir que o usuário Samba acesse a pasta compartilhada, defina uma senha para ele com o seguinte comando:
-
-```
-sudo -s smbpasswd -a smb-usuario
-```
-
-Substitua `smb-usuario` pelo nome de usuário que você criou anteriormente. Digite uma senha segura quando solicitado.
 
 Conclusão
 ---------
